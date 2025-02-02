@@ -13,9 +13,6 @@ export default async function Detailpage({ params }: { params: { slug: string } 
     );
   }
 
-  // Safely check if product.colors exists and is an array before using join()
-  const colors = product.colors && Array.isArray(product.colors) ? product.colors.join(', ') : 'No colors available';
-
   return (
     <div>
     <h1>Product Detail</h1>
@@ -30,7 +27,7 @@ export default async function Detailpage({ params }: { params: { slug: string } 
   
   <p><strong>Name:</strong> {product?.productName}</p>
   <p><strong>Category:</strong> {product?.category}</p>
-  <p><strong>Colors:</strong> {product.colors ? product.colors.join(", ") : "No colors available"}</p> {/* Safely render colors */}
+  
   <p><strong>Description:</strong> {product?.description}</p>
   <p><strong>Inventory:</strong> {product?.inventory}</p>
   <p><strong>Price:</strong> ₹{product?.price}</p>
